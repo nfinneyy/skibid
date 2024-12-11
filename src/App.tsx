@@ -1,28 +1,27 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import {
+  Route,
+  createHashRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+import Home from "@/pages/home";
+import About from "@/pages/about";
+import RootLayout from "./components/routeLayout";
 
-const Home = () => <h2>Home Page</h2>;
-const About = () => <h2>About Page</h2>;
+const NotFound = () => <h2>404 Not Found</h2>;
+
+const router = createHashRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/*" element={<NotFound />} />
+    </Route>
+  )
+);
 
 function App() {
-  return (
-    <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
