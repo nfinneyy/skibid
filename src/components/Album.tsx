@@ -22,20 +22,24 @@ const Album: React.FC<AlbumProps> = ({
   return (
     <div
       className={cn(
-        "flex mx-auto flex-row sm:flex-col items-start justify-start w-3/4 bg-stone-900 rounded-2xl p-4 shadow-lg transition duration-500 hover:scale-105 hover:shadow-green-950",
+        "flex mx-auto flex-col lg:flex-row items-start justify-start md:w-3/4 bg-stone-900 rounded-2xl p-4 shadow-lg transition duration-500 hover:scale-105 hover:shadow-green-950",
         className
       )}
     >
-      <div className="flex flex-col sm:flex-row items-start justify-start w-2/6 mr-8">
-        <img src={logo} alt={`${name} logo`} className="w-full sm:w-1/2" />
-        <div className="flex flex-col items-start justify-start">
+      <div className="flex flex-col items-center md:items-start justify-start w-full md:w-2/6 mr-8">
+        <img
+          src={logo}
+          alt={`${name} logo`}
+          className="w-2/3 md:w-full shadow-md rounded-2xl"
+        />
+        <div className="flex flex-col w-full items-start justify-start">
           <h1 className="text-2xl font-bold underline">
             <Link to={playlistLink}>{name}</Link>
           </h1>
           <h2 className="text-md text-slate-400 mb-4">By {author}</h2>
         </div>
       </div>
-      <table className="flex-1 items-start justify-start text-left">
+      <table className="flex-1 items-start justify-start text-left w-full">
         <thead>
           <tr>
             <th></th>
