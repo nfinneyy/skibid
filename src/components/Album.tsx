@@ -4,7 +4,6 @@ interface AlbumProps {
   logo: string;
   name: string;
   author: string;
-  description: string;
   track: string[];
   className?: string;
   playlistLink: string;
@@ -16,7 +15,6 @@ const Album: React.FC<AlbumProps> = ({
   logo,
   name,
   author,
-  description,
   track,
   className,
   playlistLink,
@@ -24,17 +22,18 @@ const Album: React.FC<AlbumProps> = ({
   return (
     <div
       className={cn(
-        "flex mx-auto flex-row items-start justify-start w-3/4 bg-stone-900 rounded-2xl p-4 shadow-lg transition duration-500 hover:scale-105 hover:shadow-green-950",
+        "flex mx-auto flex-row sm:flex-col items-start justify-start w-3/4 bg-stone-900 rounded-2xl p-4 shadow-lg transition duration-500 hover:scale-105 hover:shadow-green-950",
         className
       )}
     >
-      <div className="flex flex-col items-start justify-start w-2/6 mr-8">
-        <img src={logo} alt={`${name} logo`} className="w-full" />
-        <h1 className="text-2xl font-bold underline">
-          <Link to={playlistLink}>{name}</Link>
-        </h1>
-        <h2 className="text-md text-slate-400 mb-4">By {author}</h2>
-        <p className="text-sm">{description}</p>
+      <div className="flex flex-col sm:flex-row items-start justify-start w-2/6 mr-8">
+        <img src={logo} alt={`${name} logo`} className="w-full sm:w-1/2" />
+        <div className="flex flex-col items-start justify-start">
+          <h1 className="text-2xl font-bold underline">
+            <Link to={playlistLink}>{name}</Link>
+          </h1>
+          <h2 className="text-md text-slate-400 mb-4">By {author}</h2>
+        </div>
       </div>
       <table className="flex-1 items-start justify-start text-left">
         <thead>

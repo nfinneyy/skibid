@@ -18,7 +18,6 @@ export default function Home() {
         playlistLink="https://www.youtube.com/watch?v=FfG4qKuG7K4&list=PLVdaTvVt3XGZ2yUQLIbwrsh-lQizRunAT"
         name="My AI Friend"
         author="TECHNO-B"
-        description="My AI Friend is a narrative of a man and his machine friend, exploring the creation of a new consciousness and it becoming human, reflecting the progress of its growth through techno."
         track={[
           "Boot Me Up",
           "Escape",
@@ -41,7 +40,6 @@ export default function Home() {
         playlistLink="https://www.youtube.com/watch?v=H_pMqkm8uxk&list=PLVdaTvVt3XGbZpT9OZ7uLhzCioVuex6ky"
         name="Welcome To My Garage"
         author="TECHNO-B"
-        description="Welcome To My Garage is a collection of tracks that explore the world of techno and its various subgenres."
         track={[
           "Ouverture",
           "SCATTER!",
@@ -63,7 +61,6 @@ export default function Home() {
         name="Watch The Volume"
         author="TECHNO-B"
         playlistLink="https://www.youtube.com/watch?v=h1i1H5rUWYE&list=PLVdaTvVt3XGZkZUyS4phVz0yml5hD0Wbl"
-        description="Watch The Volume is a collection of tracks that explore the world of techno and its various subgenres."
         track={[
           "Guerre sur le Disco",
           "Dazzler",
